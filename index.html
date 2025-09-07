@@ -18,16 +18,14 @@
     }
 
     body {
-      background: url('home.png') no-repeat center center/cover;
       display: flex;
-      align-items: center;
-      justify-content: flex-start;
+      background: url('home1.png') no-repeat center center/cover;
     }
 
     /* Pink slanted overlay */
     .left {
       flex: 0 0 45%;
-      background: rgba(225, 0, 125, 0.6);
+      background: rgba(225, 0, 125, 0.7); /* pink with opacity */
       color: white;
       padding: 60px 40px;
       display: flex;
@@ -91,11 +89,6 @@
       font-weight: bold;
       border-radius: 4px;
       cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .login-actions button:hover {
-      background: #008ecc;
     }
 
     .forgot {
@@ -120,25 +113,6 @@
       display: block;
       margin-top: 6px;
     }
-
-    /* Responsive tweaks */
-    @media (max-width: 900px) {
-      .left {
-        flex: 0 0 60%;
-        clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
-      }
-    }
-
-    @media (max-width: 600px) {
-      body {
-        justify-content: center;
-      }
-      .left {
-        flex: 0 0 90%;
-        clip-path: none;
-        border-radius: 12px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -146,6 +120,7 @@
     <h1>Welcome</h1>
     <p class="subtitle">to your crystal clear close</p>
 
+    <!-- LOGIN FORM -->
     <form class="login-form">
       <input type="text" placeholder="User Name">
       <input type="password" placeholder="Password">
@@ -162,6 +137,7 @@
 
     <div class="divider"></div>
 
+    <!-- HELP SECTION -->
     <div class="help">
       <p><strong>Need Help With ART?</strong></p>
       <span>▶ Enroll in Genius Academy</span>
