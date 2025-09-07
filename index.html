@@ -17,7 +17,6 @@
       width: 100%;
     }
 
-    /* Background image on entire page */
     body {
       background: url('home.png') no-repeat center center/cover;
       display: flex;
@@ -27,15 +26,13 @@
 
     /* Pink slanted overlay */
     .left {
-      flex: 0 0 45%; /* default width on desktop */
-      background: rgba(225, 0, 125, 0.6); /* 60% opacity */
+      flex: 0 0 45%;
+      background: rgba(225, 0, 125, 0.6);
       color: white;
       padding: 60px 40px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-
-      /* Slant effect */
+      justify-content: flex-start;
       clip-path: polygon(0 0, 85% 0, 70% 100%, 0% 100%);
       height: 100%;
     }
@@ -51,6 +48,14 @@
       opacity: 0.9;
     }
 
+    /* White box for login */
+    .login-box {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 20px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+
     .login-form {
       display: flex;
       flex-direction: column;
@@ -59,9 +64,10 @@
 
     .login-form input {
       padding: 12px;
-      border: none;
+      border: 1px solid #ccc;
       border-radius: 4px;
       font-size: 14px;
+      width: 100%;
     }
 
     .login-form label {
@@ -69,53 +75,60 @@
       align-items: center;
       font-size: 14px;
       gap: 8px;
+      color: #444;
     }
 
-    .login-form input[type="checkbox"] {
-      width: 16px;
-      height: 16px;
+    /* Login + Forgot password row */
+    .login-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 10px;
     }
 
-    .login-form button {
-      padding: 12px;
+    .login-actions button {
+      padding: 8px 18px;
       border: none;
       background: #00aaff;
       color: white;
-      font-size: 16px;
+      font-size: 14px;
       font-weight: bold;
       border-radius: 4px;
       cursor: pointer;
       transition: background 0.3s;
     }
 
-    .login-form button:hover {
+    .login-actions button:hover {
       background: #008ecc;
     }
 
     .forgot {
-      margin-top: 8px;
       font-size: 14px;
-      color: white;
-      text-decoration: underline;
+      color: #0077cc;
+      text-decoration: none;
       cursor: pointer;
+    }
+
+    .divider {
+      border-top: 1px solid rgba(255, 255, 255, 0.5);
+      margin: 25px 0;
     }
 
     /* Help section */
     .help {
-      margin-top: 50px;
       font-size: 14px;
-      line-height: 1.6;
+      line-height: 1.8;
     }
 
     .help span {
       display: block;
-      margin-top: 8px;
+      margin-top: 6px;
     }
 
-    /* RESPONSIVE */
+    /* Responsive tweaks */
     @media (max-width: 900px) {
       .left {
-        flex: 0 0 60%; /* bigger on tablets */
+        flex: 0 0 60%;
         clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%);
       }
     }
@@ -126,7 +139,7 @@
       }
       .left {
         flex: 0 0 90%;
-        clip-path: none; /* remove slant on small screens */
+        clip-path: none;
         border-radius: 12px;
       }
     }
@@ -137,20 +150,26 @@
     <h1>Welcome</h1>
     <p class="subtitle">to your crystal clear close</p>
 
-    <form class="login-form">
-      <input type="text" placeholder="User Name">
-      <input type="password" placeholder="Password">
+    <div class="login-box">
+      <form class="login-form">
+        <input type="text" placeholder="User Name">
+        <input type="password" placeholder="Password">
 
-      <label>
-        <input type="checkbox"> Remember Me
-      </label>
+        <label>
+          <input type="checkbox"> Remember Me
+        </label>
 
-      <button type="submit">Login</button>
-      <div class="forgot">Forgot Password?</div>
-    </form>
+        <div class="login-actions">
+          <button type="submit">Login</button>
+          <a href="#" class="forgot">Forgot Password?</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="divider"></div>
 
     <div class="help">
-      <p>Need Help With ART?</p>
+      <p><strong>Need Help With ART?</strong></p>
       <span>▶ Enroll in Genius Academy</span>
       <span>✉ helpme@skystem.com</span>
       <span>☎ 914.368.0123</span>
@@ -158,4 +177,3 @@
   </div>
 </body>
 </html>
-
