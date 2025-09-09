@@ -24,15 +24,29 @@
       flex-direction: column;
       justify-content: flex-start;
       clip-path: polygon(0 0, 85% 0, 70% 100%, 0% 100%);
-      height: 100vh;           /* full height */
-      overflow-y: auto;        /* scroll if content overflows */
+      height: 100vh;
+      overflow-y: auto;
     }
 
-    .left h1 { font-size: 36px; margin-bottom: 5px; }
-    .left .subtitle { margin-bottom: 25px; font-size: 18px; opacity: 0.9; }
+    .left h1 {
+      font-size: 36px;
+      margin-bottom: 5px;
+      text-shadow: 2px 2px 4px #05ACFD; /* blue shadow */
+    }
+
+    .left .subtitle {
+      margin-bottom: 25px;
+      font-size: 18px;
+      opacity: 0.9;
+    }
 
     /* Login form */
-    .login-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
     .login-form input {
       padding: 6px 10px;
       border: 1px solid #ccc;
@@ -43,40 +57,65 @@
       width: 75%;
       max-width: 250px;
     }
-    .login-form input::placeholder { color: #666; }
-    .login-form label { display: flex; align-items: center; font-size: 13px; gap: 6px; }
+    .login-form input::placeholder {
+      color: #aaa; /* light grey placeholders */
+    }
+
+    .login-form label {
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      gap: 6px;
+      width: 75%;
+      max-width: 250px;
+    }
 
     /* Login + Forgot password row */
     .login-actions {
-      display: flex; justify-content: space-between; align-items: center;
-      width: 75%; max-width: 250px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 75%;
+      max-width: 250px;
     }
     .login-actions button {
-      padding: 6px 14px; border: none; background: #00aaff; color: #fff;
-      font-size: 13px; font-weight: bold; border-radius: 3px; cursor: pointer;
+      padding: 6px 14px;
+      border: 1px solid #fff; /* white thin border */
+      background: #00aaff;
+      color: #fff;
+      font-size: 13px;
+      font-weight: bold;
+      border-radius: 3px;
+      cursor: pointer;
     }
-    .login-actions button:hover { background: #008ecc; }
-    .forgot { font-size: 13px; color: #fff; text-decoration: underline; }
+    .login-actions button:hover {
+      background: #008ecc;
+    }
+    .forgot {
+      font-size: 13px;
+      color: #fff;
+      text-decoration: underline;
+    }
 
-    /* Longer divider line */
+    /* Divider line */
     .divider {
       border-top: 1px solid rgba(255,255,255,0.7);
       margin: 26px 0;
-      width: 92%;              /* made longer */
+      width: 92%;
       align-self: flex-start;
     }
 
     /* What's New section */
     .news {
-      width: 92%;          
-      margin-left: auto;   /* push content to right side */
-      text-align: right;   /* align text right */
+      width: 92%;
+      margin-left: 0;
+      text-align: left;
       display: grid;
       gap: 18px;
     }
     .news h3 {
       font-size: 20px;
-      font-weight: bold;   /* bold headings */
+      font-weight: bold;
     }
     .news .sub {
       font-size: 14px;
@@ -93,7 +132,6 @@
       body { justify-content: center; }
       .left { flex: 0 0 90%; clip-path: none; border-radius: 12px; }
       .news, .divider { width: 100%; }
-      .news { text-align: left; margin-left: 0; } /* better readability on small screens */
     }
   </style>
 </head>
@@ -114,7 +152,7 @@
       </div>
     </form>
 
-    <!-- Longer line -->
+    <!-- Divider -->
     <div class="divider"></div>
 
     <!-- What's New block -->
@@ -131,3 +169,4 @@
   </div>
 </body>
 </html>
+
