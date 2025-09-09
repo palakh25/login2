@@ -14,7 +14,7 @@
       background: url('home.png') no-repeat center center/cover;
     }
 
-    /* Global link reset (kills underlines everywhere) */
+    /* Global link reset */
     a, a:link, a:visited, a:hover, a:active {
       text-decoration: none !important;
       color: #fff;
@@ -42,9 +42,14 @@
     .left .subtitle { margin-bottom: 25px; font-size: 18px; opacity: 0.9; }
 
     /* Login form */
-    .login-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
     .login-form input[type="text"],
-    .login-form input[type="password"]{
+    .login-form input[type="password"] {
       padding: 6px 10px;
       border: 1px solid #ccc;
       border-radius: 3px;
@@ -54,17 +59,23 @@
       width: 75%;
       max-width: 250px;
     }
-    .login-form input::placeholder { color: #aaa; }
+    .login-form input::placeholder {
+      color: #aaa; /* light grey placeholders */
+    }
 
-    /* Remember Me: keep on one line and align left with inputs */
+    /* Remember Me inline */
     .login-form .remember {
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 6px;
       width: 75%;
       max-width: 250px;
-      white-space: nowrap;      /* no wrap */
       color: #fff;
+      font-size: 13px;
+    }
+    .login-form .remember input[type="checkbox"] {
+      margin: 0;             /* remove default spacing */
+      vertical-align: middle;
     }
 
     /* Login + Forgot password row */
@@ -88,12 +99,13 @@
     .login-actions button:hover { background: #008ecc; }
     .forgot { font-size: 13px; }
 
-    /* Divider line */
+    /* Divider line - with gaps on both ends */
     .divider {
       border-top: 1px solid rgba(255,255,255,0.7);
       margin: 26px 0;
-      width: 92%;
-      align-self: flex-start;
+      width: auto;
+      margin-left: 20px;   /* gap on left */
+      margin-right: 20px;  /* gap on right */
     }
 
     /* What's New section */
@@ -105,16 +117,17 @@
     }
     .news h3 { font-size: 20px; font-weight: bold; }
     .news .sub { font-size: 14px; opacity: 0.95; }
+    .news a { color: #fff; }
 
     /* Responsive */
     @media (max-width: 900px) {
       .left { flex: 0 0 60%; clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%); }
-      .news, .divider { width: 96%; }
+      .news, .divider { width: 96%; margin-left: 10px; margin-right: 10px; }
     }
     @media (max-width: 600px) {
       body { justify-content: center; }
       .left { flex: 0 0 90%; clip-path: none; border-radius: 12px; }
-      .news, .divider { width: 100%; }
+      .news, .divider { width: 100%; margin-left: 0; margin-right: 0; }
     }
   </style>
 </head>
@@ -128,7 +141,7 @@
       <input type="text" placeholder="User Name">
       <input type="password" placeholder="Password">
 
-      <!-- Remember Me inline and aligned -->
+      <!-- Remember Me aligned left -->
       <label class="remember">
         <input type="checkbox"> Remember Me
       </label>
@@ -156,7 +169,3 @@
   </div>
 </body>
 </html>
-
-
-
-
