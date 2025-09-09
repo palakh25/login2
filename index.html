@@ -63,7 +63,7 @@
       color: #aaa; /* light grey placeholders */
     }
 
-    /* Remember Me inline */
+    /* Remember Me: inline left */
     .login-form .remember {
       display: flex;
       align-items: center;
@@ -74,7 +74,7 @@
       font-size: 13px;
     }
     .login-form .remember input[type="checkbox"] {
-      margin: 0;             /* remove default spacing */
+      margin: 0;
       vertical-align: middle;
     }
 
@@ -99,18 +99,19 @@
     .login-actions button:hover { background: #008ecc; }
     .forgot { font-size: 13px; }
 
-    /* Divider line - with gaps on both ends */
+    /* Divider line: thicker, semi-transparent, left-aligned */
     .divider {
-      border-top: 1px solid rgba(255,255,255,0.7);
+      border-top: 2px solid rgba(255,255,255,0.7);
       margin: 26px 0;
-      width: auto;
-      margin-left: 20px;   /* gap on left */
-      margin-right: 20px;  /* gap on right */
+      width: 75%;          /* only partial width */
+      max-width: 250px;    /* matches form alignment */
+      align-self: flex-start;
     }
 
     /* What's New section */
     .news {
-      width: 92%;
+      width: 75%;
+      max-width: 250px;
       text-align: left;
       display: grid;
       gap: 18px;
@@ -122,12 +123,12 @@
     /* Responsive */
     @media (max-width: 900px) {
       .left { flex: 0 0 60%; clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%); }
-      .news, .divider { width: 96%; margin-left: 10px; margin-right: 10px; }
+      .news, .divider { width: 85%; }
     }
     @media (max-width: 600px) {
       body { justify-content: center; }
       .left { flex: 0 0 90%; clip-path: none; border-radius: 12px; }
-      .news, .divider { width: 100%; margin-left: 0; margin-right: 0; }
+      .news, .divider { width: 100%; max-width: none; }
     }
   </style>
 </head>
