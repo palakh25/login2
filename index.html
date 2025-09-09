@@ -5,17 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Crystal Clear Close - Login</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
 
-    body, html {
-      height: 100%;
-      width: 100%;
-    }
+    html, body { height: 100%; width: 100%; }
 
     body {
       display: flex;
@@ -25,39 +17,25 @@
     /* Pink slanted overlay */
     .left {
       flex: 0 0 45%;
-      background: rgba(225, 0, 125, 0.7);
-      color: white;
+      background: rgba(225, 0, 125, 0.5); /* pink with opacity */
+      color: #fff;
       padding: 60px 40px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
       clip-path: polygon(0 0, 85% 0, 70% 100%, 0% 100%);
-      height: 100vh; /* always full height */
-      overflow-y: auto; /* scroll if content overflows */
+      height: 100vh;           /* full height */
+      overflow-y: auto;        /* scroll if content overflows */
     }
 
-    .left h1 {
-      font-size: 36px;
-      margin-bottom: 5px;
-    }
-
-    .left p.subtitle {
-      margin-bottom: 25px;
-      font-size: 18px;
-      opacity: 0.9;
-    }
+    .left h1 { font-size: 36px; margin-bottom: 5px; }
+    .left .subtitle { margin-bottom: 25px; font-size: 18px; opacity: 0.9; }
 
     /* Login form */
-    .login-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-
+    .login-form { display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px; }
     .login-form input {
       padding: 6px 10px;
-      border: 1px solid #ccc;   /* make fields visible */
+      border: 1px solid #ccc;
       border-radius: 3px;
       font-size: 13px;
       background: #fff;
@@ -65,65 +43,57 @@
       width: 75%;
       max-width: 250px;
     }
-
-    .login-form input::placeholder {
-      color: #666;
-    }
-
-    .login-form label {
-      display: flex;
-      align-items: center;
-      font-size: 13px;
-      gap: 6px;
-    }
+    .login-form input::placeholder { color: #666; }
+    .login-form label { display: flex; align-items: center; font-size: 13px; gap: 6px; }
 
     /* Login + Forgot password row */
     .login-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 75%;
-      max-width: 250px;
+      display: flex; justify-content: space-between; align-items: center;
+      width: 75%; max-width: 250px;
     }
-
     .login-actions button {
-      padding: 6px 14px;
-      border: none;
-      background: #00aaff;
-      color: white;
-      font-size: 13px;
-      font-weight: bold;
-      border-radius: 3px;
-      cursor: pointer;
+      padding: 6px 14px; border: none; background: #00aaff; color: #fff;
+      font-size: 13px; font-weight: bold; border-radius: 3px; cursor: pointer;
     }
+    .login-actions button:hover { background: #008ecc; }
+    .forgot { font-size: 13px; color: #fff; text-decoration: underline; }
 
-    .login-actions button:hover {
-      background: #008ecc;
-    }
-
-    .forgot {
-      font-size: 13px;
-      color: #fff;
-      text-decoration: underline;
-      cursor: pointer;
-    }
-
+    /* Longer divider line */
     .divider {
-      border-top: 1px solid rgba(255, 255, 255, 0.6);
-      margin: 20px 0;
-      width: 75%;
-      max-width: 250px;
+      border-top: 1px solid rgba(255,255,255,0.7);
+      margin: 26px 0;
+      width: 92%;              /* made longer */
+      align-self: flex-start;
     }
 
-    /* Help section */
-    .help {
-      font-size: 13px;
-      line-height: 1.8;
+    /* What's New section */
+    .news {
+      width: 92%;          
+      margin-left: auto;   /* push content to right side */
+      text-align: right;   /* align text right */
+      display: grid;
+      gap: 18px;
     }
+    .news h3 {
+      font-size: 20px;
+      font-weight: bold;   /* bold headings */
+    }
+    .news .sub {
+      font-size: 14px;
+      opacity: 0.95;
+    }
+    .news a { color: #fff; text-decoration: underline; }
 
-    .help span {
-      display: block;
-      margin-top: 4px;
+    /* Responsive */
+    @media (max-width: 900px) {
+      .left { flex: 0 0 60%; clip-path: polygon(0 0, 100% 0, 90% 100%, 0% 100%); }
+      .news, .divider { width: 96%; }
+    }
+    @media (max-width: 600px) {
+      body { justify-content: center; }
+      .left { flex: 0 0 90%; clip-path: none; border-radius: 12px; }
+      .news, .divider { width: 100%; }
+      .news { text-align: left; margin-left: 0; } /* better readability on small screens */
     }
   </style>
 </head>
@@ -136,10 +106,7 @@
     <form class="login-form">
       <input type="text" placeholder="User Name">
       <input type="password" placeholder="Password">
-
-      <label>
-        <input type="checkbox"> Remember Me
-      </label>
+      <label><input type="checkbox"> Remember Me</label>
 
       <div class="login-actions">
         <button type="submit">Login</button>
@@ -147,15 +114,20 @@
       </div>
     </form>
 
+    <!-- Longer line -->
     <div class="divider"></div>
 
-    <!-- HELP SECTION -->
-    <div class="help">
-      <p><strong>Need Help With ART?</strong></p>
-      <span>▶ Enroll in Genius Academy</span>
-      <span>✉ helpme@skystem.com</span>
-      <span>☎ 914.368.0123</span>
-    </div>
+    <!-- What's New block -->
+    <section class="news">
+      <div>
+        <h3>What’s New in ART?</h3>
+        <div class="sub"><a href="#">Access Recent Updates Here</a></div>
+      </div>
+      <div>
+        <h3>ART Certification Available Now!</h3>
+        <div class="sub"><a href="#">Learn More Here</a></div>
+      </div>
+    </section>
   </div>
 </body>
 </html>
