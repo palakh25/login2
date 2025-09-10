@@ -62,18 +62,28 @@
     .login-form input::placeholder {
       color: #aaa; /* light grey placeholders */
     }
+/* Remember Me inline */ 
+    .login-form .remember { 
+      display: flex; 
+      align-items: center; 
+      gap: 6px; 
+      width: 75%; 
+      max-width: 250px; 
+      color: #fff; 
+      font-size: 13px; } 
+    .login-form .remember input[type="checkbox"] { margin: 0; vertical-align: middle; } 
 
-    /* Maintenance Notice */
+    
+    /* Maintenance Notice 
     .maintenance {
       color: #05ACFD;
       font-size: 14px;
       font-weight: bold;
       margin-top: 10px;
-      width: 80%;
-      max-width: 400px;
-      line-height: 1.4;
+      width: 75%;
+      max-width: 250px;
     }
-
+*/
     /* Login + Forgot password row */
     .login-actions {
       display: flex;
@@ -146,18 +156,13 @@
       <input type="text" placeholder="User Name">
       <input type="password" placeholder="Password">
 
-      <!-- Maintenance Notice -->
-      <div class="maintenance">
-        <h3>ART will be down from 9/18/25 11pm to 9/19/25 8am</h3>
-        <h3>(for maintenance and upgrade)</h3>
-      </div>
+   
 
       <div class="login-actions">
         <button type="submit">Login</button>
         <a href="#" class="forgot">Forgot Password?</a>
       </div>
-    </form>
-
+    </form>  
     <!-- Divider -->
     <div class="divider"></div>
 
@@ -178,3 +183,4 @@
   </div>
 </body>
 </html>
+
